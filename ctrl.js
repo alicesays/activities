@@ -6,7 +6,7 @@
 */
 
 app.controller("myCtrl", function ($scope) {
-    $scope.searchName = "";
+    $scope.searchTitle = "";
     $scope.activities = [
         {
             "Count": "1",

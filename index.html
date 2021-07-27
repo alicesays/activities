@@ -5,7 +5,7 @@ date: 06/27/2021-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Wild Child PEI - Activities List</title>
+    <title>Wild Child PEI - Activitie List</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -27,16 +27,73 @@ date: 06/27/2021-->
     <div ng-app="myApp" ng-controller="myCtrl">
         <p>Search: <input ng-model="searchTitle" type="text"></p>
         <div class="text-center">
-            <span>Sort by: </span>
-            <button type="button" class="btn btn-primary" ng-click="orderByMe('Title')">A-Z</button>
-            <!--|
-            <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Season</button>
-            |
-            <button type="button" class="btn btn-primary" ng-click="orderByMe('Time')">Duration</button>
-            |
-            <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">Age Group</button>
-            -->
+            <span><strong>Filters</strong></span>
         </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <strong>Sort by</strong>
+                    </div>
+                    <div class="col-xs-3">
+                        <strong>Season</strong>
+                    </div>
+                    <div class="col-xs-3">
+                        <strong>Age Range</strong>
+                    </div>
+                    <div class="col-xs-3">
+                        <strong>Duration</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Title')">A-Z</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Summer</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">3-5</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">5-10 min</button>
+                                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Fall</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">5-10</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">10-30 min</button>
+                                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Winter</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">10+</button>
+                                            </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">30 min+</button>
+                                            </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-3">
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Spring</button>
+                                            </div>
+                    <div class="col-xs-3">
+                    </div>
+                </div>
+            </div>
         <p>You searched for: {{searchTitle}}</p>
         <ul>
             <li ng-repeat="x in activities | filter: searchTitle| orderBy: myOrderBy">
