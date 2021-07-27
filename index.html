@@ -5,6 +5,7 @@ date: 06/27/2021-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wild Child PEI - Activitie List</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <!-- Latest compiled and minified CSS -->
@@ -19,95 +20,98 @@ date: 06/27/2021-->
 </head>
 <body>
 <div id="container">
-    <img id="logo" src="wild-child-forest-school-colour_background removed.png"/>
-    <div class="jumbotron text-center">
-        <h1>Wild Child PEI</h1>
-        <h3>Activities List</h3>
-    </div>
-    <div ng-app="myApp" ng-controller="myCtrl">
-        <p>Search: <input ng-model="searchTitle" type="text"></p>
-        <div class="text-center">
-            <span><strong>Filters</strong></span>
+    <div class="container-fluid">
+        <img id="logo" src="wild-child-forest-school-colour_background removed.png"/>
+        <div class="jumbotron text-center">
+            <h1>Wild Child PEI</h1>
+            <h3>Activities List</h3>
         </div>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <p>Search: <input ng-model="searchTitle" type="text"></p>
+            <div class="text-center">
+                <span><strong>Filters</strong></span>
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                         <strong>Sort by</strong>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                         <strong>Season</strong>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                         <strong>Age Range</strong>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                         <strong>Duration</strong>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                         <button type="button" class="btn btn-primary" ng-click="orderByMe('Title')">A-Z</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Summer</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">3-5</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">5-10 min</button>
-                                            </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="('Season': filter: 'summer' )">Summer</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">3-5</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">5-10 min</button>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                     </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Fall</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">5-10</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">10-30 min</button>
-                                            </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Fall</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">5-10</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">10-30 min</button>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                     </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Winter</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">10+</button>
-                                            </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Age')">30 min+</button>
-                                            </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Winter</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">10+</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">30 min+</button>
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
                     </div>
-                    <div class="col-xs-3">
-                        <button type="button" class="btn btn-primary" ng-click="oderByMe('Season')">Spring</button>
-                                            </div>
-                    <div class="col-xs-3">
+                    <div class="col-sm-3">
+                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Spring</button>
+                    </div>
+                    <div class="col-sm-3">
                     </div>
                 </div>
             </div>
-        <p>You searched for: {{searchTitle}}</p>
-        <ul>
-            <li ng-repeat="x in activities | filter: searchTitle| orderBy: myOrderBy">
-                <!--<img class="img" ng-src="{{x.imageUrl}}" alt="{{x.name}}"/>-->
-                <strong>Title: {{x.Title}}</strong>
-                <p>Category: {{x.Category}}</p>
-                <p>Season: {{x.Season}}</p>
-                <p>Age: {{x.Age}}</p>
-                <p>Time: {{x.Time}}</p>
-                <p>Materials: {{x.Materials}}</p>
-                <p>Details: {{x.Details}}</p>
-                <hr>
-            </li>
-        </ul>
+            </div>
+            <p>You searched for: {{searchTitle}}</p>
+            <ul>
+                <li ng-repeat="x in activities | filter: searchTitle| orderBy: myOrderBy">
+                    <!--<img class="img" ng-src="{{x.imageUrl}}" alt="{{x.name}}"/>-->
+                    <strong>Title: {{x.Title}}</strong>
+                    <p>Category: {{x.Category}}</p>
+                    <p>Season: {{x.Season}}</p>
+                    <p>Age: {{x.Age}}</p>
+                    <p>Time: {{x.Time}}</p>
+                    <p>Materials: {{x.Materials}}</p>
+                    <p>Details: {{x.Details}}</p>
+                    <hr>
+                </li>
+            </ul>
+        </div>
+
     </div>
 </div>
 </body>
