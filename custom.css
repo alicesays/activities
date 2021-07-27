@@ -1,0 +1,74 @@
+/*
+author: jwhittaker
+date created: 04/22/2021
+Custom CSS based on requirements for A6*/
+
+
+#container {
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px antiquewhite;
+    padding: 5px;
+    margin-top: 10px;
+    width: 800px;
+}
+
+/*--------------------------------------------------------------------*/
+/*General Styling*/
+img {
+    float: left;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+#logo {
+    float: left;
+    width: 167px;
+    height: 67px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p .smallPrint {
+    font-size: xx-small;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.btn {
+    background-color: #be4a02;
+    border-color: #be4a02;
+}
+
+footer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 800px;
+}
+
+.jumbotron {
+    background-color: #be4a02;
+}
+
+hr{
+    background-color: #be4a02;
+}
+
+p .paragraph {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+li {
+    padding: 10px 10px 0px 10px;
+}
+li:nth-child(even) {
+    background: #ffbd94;
+}
+
