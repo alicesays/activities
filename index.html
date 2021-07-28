@@ -30,83 +30,88 @@ date: 06/27/2021-->
             <p>Search: <input ng-model="searchTitle" type="text"></p>
             <div class="text-center">
                 <span><strong>Filters</strong></span>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <strong>Sort by</strong>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <strong>Sort by</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <strong>Season</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <strong>Age Range</strong>
+                        </div>
+                        <div class="col-sm-3">
+                            <strong>Duration</strong>
+                        </div>
                     </div>
-                    <div class="col-sm-3">
-                        <strong>Season</strong>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Title')">A-Z</button>
+                        </div>
+                        <!--
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="(searchTitle.activities | filter: {name: 'summer'} )">
+                                Summer
+                            </button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">3-5</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">5-10 min</button>
+                        </div>
                     </div>
-                    <div class="col-sm-3">
-                        <strong>Age Range</strong>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Fall</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">5-10</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">10-30 min</button>
+                        </div>
                     </div>
-                    <div class="col-sm-3">
-                        <strong>Duration</strong>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Winter</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">10+</button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">30 min+</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Spring</button>
+                        </div>
+                        <div class="col-sm-3">
+                        </div>
+                                                            -->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Title')">A-Z</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="('Season': filter: 'summer' )">Summer</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">3-5</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">5-10 min</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Fall</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">5-10</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">10-30 min</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Winter</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">10+</button>
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Age')">30 min+</button>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                    </div>
-                    <div class="col-sm-3">
-                        <button type="button" class="btn btn-primary" ng-click="orderByMe('Season')">Spring</button>
-                    </div>
-                    <div class="col-sm-3">
-                    </div>
-                </div>
-            </div>
             </div>
             <p>You searched for: {{searchTitle}}</p>
             <ul>
                 <li ng-repeat="x in activities | filter: searchTitle| orderBy: myOrderBy">
                     <!--<img class="img" ng-src="{{x.imageUrl}}" alt="{{x.name}}"/>-->
-                    <strong>Title: {{x.Title}}</strong>
-                    <p>Category: {{x.Category}}</p>
-                    <p>Season: {{x.Season}}</p>
-                    <p>Age: {{x.Age}}</p>
-                    <p>Time: {{x.Time}}</p>
-                    <p>Materials: {{x.Materials}}</p>
-                    <p>Details: {{x.Details}}</p>
+                    <p><strong>Title: {{x.Title | uppercase}}</strong></p>
+
+                    <p><strong> Category: </strong><span>{{x.Category}}</span></p>
+                    <p><strong> Season: </strong><span>{{x.Season}}</span></p>
+                    <p><strong> Age: </strong><span>{{x.Age}}</span></p>
+                    <p><strong> Time: </strong><span>{{x.Time}}</span></p>
+                    <p><strong> Materials: </strong><span>{{x.Materials}}</span></p>
+                    <p><strong> Details: </strong><span>{{x.Details}}</span></p>
                     <hr>
                 </li>
             </ul>

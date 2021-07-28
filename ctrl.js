@@ -8,7 +8,12 @@
 app.controller("myCtrl", function ($scope) {
     $scope.searchTitle = "";
     $scope.activities = [
-        {
+        {"Seasons":[
+                {name: 'Summer'},
+                {name: 'Fall'},
+                {name: 'Winter'},
+                {name: 'Spring'}
+            ],
             "Count": "1",
             "Title": "Nature Colour Hunt",
             "Category": "Scavenger hunt",
